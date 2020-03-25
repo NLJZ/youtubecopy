@@ -186,6 +186,7 @@ img {
   display: flex;
   justify-content: space-around;
   padding: 2rem;
+  display: none;
 }
 
 #darkModeBox input[type="checkbox"] {
