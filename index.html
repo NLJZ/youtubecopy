@@ -16,7 +16,7 @@
     <title>YouTube Copy</title>
   </head>
   <body>
-    <nav>
+    <nav id="topNav">
       <div class="logo">
         <i class="fas fa-lg fa-bars"></i><i class="fab fa-lg fa-youtube"></i
         ><span class="youtubetext">YouTube</span><span class="sup">DE</span>
@@ -31,9 +31,55 @@
       <div class="user-buttons">
         <i class="fas fa-lg fa-video"></i><i class="fas fa-lg fa-th"></i
         ><i class="fas fa-lg fa-bell"></i
-        ><img src="./img/nlj.jpg" class="user-photo" alt="user icon" />
+        ><button id="showUser"><img src="./img/nlj.jpg" class="user-photo" alt="user icon" /></button>
       </div>
     </nav>
+    <div class="user-settings" id="userSettings">
+      <div class="user-settings-top">
+        <ul>
+          <li><span class="setting-icon"><i class="far fa-user"></span></i> Your channel</li>
+          <li><span class="setting-icon"><i class="fas fa-dollar-sign"></i></span> Paid memberships</li>
+          <li><span class="setting-icon"><i class="fas fa-cog"></i></span> YouTube Studio</li>
+          <li><span class="setting-icon"><i class="fas fa-user"></i></span> Switch Account</li>
+          <li><span class="setting-icon"><i class="fas fa-sign-out-alt"></i></span> Sign out</li>
+        </ul>
+      </div>
+      <div class="user-settings-bottom">
+        <ul>
+          <button id="darkMode"><li><span class="setting-icon"><i class="fas fa-sign-out-alt"></i></span> Dark theme</li></button>
+          <li><span class="setting-icon"><i class="fas fa-language"></i></span> Language: English</li>
+          <li><span class="setting-icon"><i class="fas fa-globe"></i></span> Location: United States</li>
+          <li><span class="setting-icon"><i class="fas fa-cog"></i></span> Settings</li>
+          <li><span class="setting-icon"><i class="fas fa-shield-alt"></i></span> Your data in YouTube</li>
+          <li><span class="setting-icon"><i class="fas fa-question-circle"></i></span> Help</li>
+          <li><span class="setting-icon"><i class="fas fa-question-circle"></i></span> Send feedback</li>
+          <li><span class="setting-icon"><i class="fas fa-keyboard"></i></span> Keyboard shortcuts</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="darkModeBox">
+      <label for="dark-theme">DARK THEME <input type="checkbox" name="dark-theme" id="darkModeInput"></label>
+    </div>
+
+    <script>
+      function check() {
+        if (darkModeInput.checked == true) {
+          console.log("butts")
+        }
+    }
+    </script>
+
+    <script>
+      showUser.onclick = function() {
+        console.log("hey")
+        document.getElementById("userSettings");
+      if (userSettings.classList.contains("show") == false) {
+        userSettings.classList.add("show");} else {
+          userSettings.classList.remove("show");
+        }
+      };
+    </script>
     <main>
       <aside>
         <ul>
@@ -44,7 +90,7 @@
         </ul>
       </aside>
       <div class="wrapper">
-        <section class="video-nav">
+        <section class="video-nav" id="videoNav">
             <div class="list-wrapper">
           <ul>
             <li>home</li>
@@ -58,7 +104,7 @@
         </div>
           <div class="arrow"><i class="fas fa-chevron-right"></i></li></div>
       </section>
-        <div class="videos-holder">
+        <div class="videos-holder" id="videoHolder">
 
           <section class="video-section">
             <div class="video-section-info"><h3>Uploads</h3><i class="fas fa-play"></i><span class="play-all">Play All</span></div>
@@ -195,5 +241,21 @@
         </div>
       </div>
     </main>
+    <script>
+      darkMode.onclick = function() {
+        console.log("yo dark mode")
+        const body = document.body;
+        if (body.classList.contains("dark-mode") == false) {
+          body.classList.add("dark-mode");
+          videoHolder.classList.add("dark-mode");
+          videoNav.classList.add("dark-mode");
+        } else {
+          body.classList.remove("dark-mode");
+          videoHolder.classList.remove("dark-mode");
+          videoNav.classList.remove("dark-mode");
+        }
+        };
+      
+    </script>
   </body>
 </html>
