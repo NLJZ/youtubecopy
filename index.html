@@ -58,22 +58,6 @@
       </div>
     </div>
 
-    <div id="darkModeBox">
-      <span>DARK THEME</span>
-      <div class="bar">
-        <input type="checkbox" name="dark-theme" id="darkModeInput">
-        <label for="darkModeInput" id="slider"></label>
-      </div>
-    </div>
-
-    <script>
-      function check() {
-        if (darkModeInput.checked == true) {
-          console.log("butts")
-        }
-    }
-    </script>
-
     <script>
       showUser.onclick = function() {
         console.log("hey")
@@ -84,6 +68,52 @@
         }
       };
     </script>
+
+
+    <div class="show-dark-mode" id="darkModeBox">
+      <span>DARK THEME</span>
+      <div class="bar">
+        <input type="checkbox" name="dark-theme" id="darkModeInput">
+        <label for="darkModeInput" id="slider"></label>
+      </div>
+    </div>
+
+    <script>
+        darkMode.onclick = function() {
+        console.log("open dark mode box");
+        document.getElementById("darkModeBox");
+        if (darkModeBox.classList.contains("show-flex") == false) {
+        darkModeBox.classList.add("show-flex");} else {
+          darkModeBox.classList.remove("show-flex");
+        }
+        if (userSettings.classList.contains("show") == true) {
+        userSettings.classList.remove("show");
+        }
+
+      };
+    </script>
+
+
+    <script>
+      slider.onclick = function() {
+        console.log("yo dark mode")
+        const body = document.body;
+        if (body.classList.contains("dark-mode") == false) {
+          body.classList.add("dark-mode");
+          videoHolder.classList.add("dark-mode");
+          videoNav.classList.add("dark-mode");
+          videoInfo.classList.add("dark-mode");
+        } else {
+          body.classList.remove("dark-mode");
+          videoHolder.classList.remove("dark-mode");
+          videoNav.classList.remove("dark-mode");
+          videoInfo.classList.remove("dark-mode");
+        }
+        };
+      
+    </script>
+
+
     <main>
       <aside>
         <ul>
@@ -245,23 +275,5 @@
         </div>
       </div>
     </main>
-    <script>
-      darkMode.onclick = function() {
-        console.log("yo dark mode")
-        const body = document.body;
-        if (body.classList.contains("dark-mode") == false) {
-          body.classList.add("dark-mode");
-          videoHolder.classList.add("dark-mode");
-          videoNav.classList.add("dark-mode");
-          videoInfo.classList.add("dark-mode");
-        } else {
-          body.classList.remove("dark-mode");
-          videoHolder.classList.remove("dark-mode");
-          videoNav.classList.remove("dark-mode");
-          videoInfo.classList.remove("dark-mode");
-        }
-        };
-      
-    </script>
   </body>
 </html>

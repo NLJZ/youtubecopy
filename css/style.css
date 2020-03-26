@@ -185,28 +185,26 @@ img {
   padding-right: 3rem;
 }
 
-.show {
-  display: block;
-}
-
 /* dark mode slider */
 
-#darkModeBox {
+.show-dark-mode {
   position: fixed;
   right: 1rem;
   top: 3.2rem;
   z-index: 1000;
   background-color: rgba(255, 255, 255, 0.9);
-  display: block;
   width: 15rem;
-  display: flex;
+  display: none;
   justify-content: space-around;
   padding: 2rem;
-  display: flex;
   align-items: center;
   font-size: 10px;
   border: 1px solid #ddd;
   border-top: none;
+}
+
+.show-flex {
+  display: flex;
 }
 
 .bar {
@@ -526,4 +524,8 @@ div.videos > div:nth-child(n + 4) {
   background-color: #111;
   color: #eee;
   border-color: #eee;
+}
+
+.show {
+  display: block;
 }
