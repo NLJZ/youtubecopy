@@ -59,7 +59,11 @@
     </div>
 
     <div id="darkModeBox">
-      <label for="dark-theme">DARK THEME <input type="checkbox" name="dark-theme" id="darkModeInput"></label>
+      <span>DARK THEME</span>
+      <div class="bar">
+        <input type="checkbox" name="dark-theme" id="darkModeInput">
+        <label for="darkModeInput" id="slider"></label>
+      </div>
     </div>
 
     <script>
@@ -107,7 +111,7 @@
         <div class="videos-holder" id="videoHolder">
 
           <section class="video-section">
-            <div class="video-section-info"><h3>Uploads</h3><i class="fas fa-play"></i><span class="play-all">Play All</span></div>
+            <div class="video-section-info" id="videoInfo"><h3>Uploads</h3><i class="fas fa-play"></i><span class="play-all">Play All</span></div>
             <div class="videos">
               <div class="video">
                 <img src="img/rocket1.jpg">
@@ -249,10 +253,12 @@
           body.classList.add("dark-mode");
           videoHolder.classList.add("dark-mode");
           videoNav.classList.add("dark-mode");
+          videoInfo.classList.add("dark-mode");
         } else {
           body.classList.remove("dark-mode");
           videoHolder.classList.remove("dark-mode");
           videoNav.classList.remove("dark-mode");
+          videoInfo.classList.remove("dark-mode");
         }
         };
       
